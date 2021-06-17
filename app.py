@@ -6,6 +6,7 @@ from wtforms.validators import DataRequired
 import unittest
 
 from app1 import create_app
+from app1.forms import LoginForm
 
 app = create_app()
 
@@ -17,10 +18,10 @@ app = create_app()
 
 todos = ['Comprar café', 'Solicitud de compra', 'Entregar video al productor' ]
 
-class LoginForm(FlaskForm):
-    username = StringField('Nombre de usuario', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Enviar')
+# class LoginForm(FlaskForm):
+#     username = StringField('Nombre de usuario', validators=[DataRequired()])
+#     password = PasswordField('Password', validators=[DataRequired()])
+#     submit = SubmitField('Enviar')
 
 @app.cli.command()
 def test():
